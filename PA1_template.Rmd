@@ -36,8 +36,8 @@ hist(summed$total, breaks=10)
 
 2. Calculate and report the **mean** and **median** total number of steps taken per day
 ```{r}
-paste("Mean steps per day:", mean(stepData$steps, na.rm = T))
-paste("Median steps per day:", median(stepData$steps, na.rm = T))
+paste("Mean steps per day:", mean(summed$total, na.rm = T))
+paste("Median steps per day:", median(summed$total, na.rm = T))
 ```
 
 ## What is the average daily activity pattern?
@@ -88,10 +88,10 @@ newDateGroup <- group_by(stepData, date)
 newSummed <- summarize(newDateGroup, total=sum(steps, na.rm = T))
 hist(newSummed$total, breaks=10)
 
-paste("New mean steps per day:", mean(stepData$steps, na.rm = T))
-paste("New median steps per day:", median(stepData$steps, na.rm = T))
+paste("New mean steps per day:", mean(newSummed$total, na.rm = T))
+paste("New median steps per day:", median(newSummed$total, na.rm = T))
 ```
-The median and mean did not change. The first bar in the histogram changed significantly, but other than that, their overall shapes are quite similar. So imputing missing data in this exercise only had a significant effect for days where there were 0 to 2000 steps.
+The median and mean both increased; the mean increased more than the median. The first bar in the histogram changed significantly, but other than that, their overall shapes are quite similar. So imputing missing data in this exercise had a significant effect for days where there were 0 to 2000 steps.
 
 ## Are there differences in activity patterns between weekdays and weekends?
 1. Create a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.

@@ -45,19 +45,19 @@ hist(summed$total, breaks=10)
 2. Calculate and report the **mean** and **median** total number of steps taken per day
 
 ```r
-paste("Mean steps per day:", mean(stepData$steps, na.rm = T))
+paste("Mean steps per day:", mean(summed$total, na.rm = T))
 ```
 
 ```
-## [1] "Mean steps per day: 37.3825995807128"
+## [1] "Mean steps per day: 9354.22950819672"
 ```
 
 ```r
-paste("Median steps per day:", median(stepData$steps, na.rm = T))
+paste("Median steps per day:", median(summed$total, na.rm = T))
 ```
 
 ```
-## [1] "Median steps per day: 0"
+## [1] "Median steps per day: 10395"
 ```
 
 ## What is the average daily activity pattern?
@@ -128,19 +128,19 @@ hist(newSummed$total, breaks=10)
 ![](PA1_template_files/figure-html/unnamed-chunk-11-1.png) 
 
 ```r
-paste("New mean steps per day:", mean(stepData$steps, na.rm = T))
+paste("New mean steps per day:", mean(newSummed$total, na.rm = T))
 ```
 
 ```
-## [1] "New mean steps per day: 37.3825995807128"
+## [1] "New mean steps per day: 10766.1886792453"
 ```
 
 ```r
-paste("New median steps per day:", median(stepData$steps, na.rm = T))
+paste("New median steps per day:", median(newSummed$total, na.rm = T))
 ```
 
 ```
-## [1] "New median steps per day: 0"
+## [1] "New median steps per day: 10766.1886792453"
 ```
 The median and mean did not change. The first bar in the histogram changed significantly, but other than that, their overall shapes are quite similar. So imputing missing data in this exercise only had a significant effect for days where there were 0 to 2000 steps.
 
